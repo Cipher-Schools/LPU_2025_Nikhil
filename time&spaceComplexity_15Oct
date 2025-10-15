@@ -1,0 +1,113 @@
+#include<iostream>
+using namespace std;
+
+
+int main(){
+    
+    
+    
+    int arr[n] ;
+    
+    //Tc : O(n)
+   // for(int i =0;i<n;i++)cin>>arr[i];
+    
+     //Tc : O(n)
+    //for(int i =0;i<n;i++)cout<<arr[i]<<" ";
+    
+    
+    // TC : O(n)
+    // for(int i = 0;i<n;i++){
+    //     for(int j = 0;j<n;j++){
+        
+    //         break;
+    //         continue;
+    //     }
+    // }
+    
+      // TC : O(n^2)
+    // for(int i = 0;i<n;i++){
+    //     for(int j = 0;j<n;j++){
+        
+
+    //         continue;
+        //         break;
+    //     }
+    // }
+    
+    
+    // TC : O(logn)
+    // int n = 100;
+    
+    // for( n ;n>0; ){
+    //     n = n/2;
+    // }
+    
+    // int n = 10000;
+    
+    // TC : O (nlogn)
+    // for(int i = 0;i<n;i++){
+    //     int j = 999;
+    //     for(j ;j>0 ;){
+    //         cout<<"hey"<<" ";
+    //         j = j/2;
+    //     }
+    // }
+    
+    // TC : O(n)
+    // SC : O (n)
+    // int n = 100;
+    // int arr[n];
+    
+    // int a = 1;
+    // int b =2;
+    // int sum = a+b;
+    // cout<<sum<<" ";
+    
+    
+    // for(int i =0;i<n;i++)cin>>arr[i];
+    
+    
+    // for(int j =0;j<n;j++)cout<<arr[j];
+    
+    
+    
+    
+    
+     // TC : O(n)
+    // SC : O (n)
+    // int n = 100;
+    // int arr[n];
+    
+    
+    // for(int i = 0;i<n;i++){
+    //     int j  = 0;
+    //     for(j= 0;j<n;j++){
+    //         cout<<"hey";
+    //     }
+    //     i = j+1;
+    // }
+    
+    
+    // TC : O(n)
+    // SC : O (n)
+    // int n = 100;
+    // int arr[n];
+     // int arr2[n];
+    
+    
+    // for(int i = 0;i<n;i++){
+    //     int j  = 0;
+    //     for(j= 0;j<n;j++){
+    //         cout<<"hey";
+    //     }
+    //     i = j+1;
+    // }
+    
+    
+    int arr[n][n];
+    
+    
+    
+  
+     
+}
