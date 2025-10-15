@@ -1,0 +1,65 @@
+#include<iostream>
+using namespace std;
+
+class  Car{
+    public : 
+        int model_no ;
+        string type;
+        
+};
+
+class  Student{
+    public : 
+        int age ;
+        string name;
+        //string  scholarship;
+        bool scholarship;
+        
+        Student(){
+            
+        }
+        
+         Student(string nm){
+             
+             name = nm;
+            
+        }
+        
+        Student(int a , string FullName,bool schl){
+          age = a;
+          name = FullName ;
+          scholarship = schl;
+        }
+        
+        ~Student(){
+            cout<<"Destructor called"<<endl;
+        }
+        
+        void getName(){
+            cout<<"My Name is :" <<name<<endl;
+        }
+        
+};
+
+int main(){
+
+    Student s(25,"Nikhil Thakur",true);
+    
+    // cout<<s.name<<endl;
+    // cout<<s.age<<endl;
+    // cout<<s.scholarship<<endl;
+    
+    
+    Student s2;
+    s2.name = "Vansh";
+    
+    //cout<<s2.name<<endl;
+
+    Student s3("Bhanu");
+
+    s3.getName();
+    
+    
+    
+     
+}
