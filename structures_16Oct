@@ -1,0 +1,40 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+// class Animal{
+//     // public :
+//     int age ;
+//     string name;
+    
+//     void display(){
+//         cout<<"Name is : "<<name<< " and Age is : "<<age<<endl;
+//     }
+    
+// };
+
+
+struct Animal{
+    // public :
+    int age ;
+    string name;
+    
+    void display(){
+        cout<<"Name is : "<<name<< " and Age is : "<<age<<endl;
+    }
+    
+};
+
+int main() {
+    
+    Animal a;
+    a.age= 22;
+    a.name = "Horse";
+    
+    a.display();
+  
+    
+    
+    return -1;
+  
+}
