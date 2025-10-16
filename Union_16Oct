@@ -1,0 +1,30 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+
+
+union Animal{
+    // public :
+    int age ;
+    int legs;
+    
+    void display(){
+        cout<<"Legs are : "<<legs<< " and Age is : "<<age<<endl;
+    }
+    
+};
+
+int main() {
+    
+    Animal a;
+    a.age= 22;
+    a.legs =4;
+    
+    a.display();
+  
+    
+    
+    return -1;
+  
+}
