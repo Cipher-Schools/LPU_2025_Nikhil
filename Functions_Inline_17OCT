@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+class Math{
+    public : 
+    int a,b;
+    
+    void sum(int x,int y){
+        cout<<x+y<<endl;
+    }
+    
+    //Inline  member functions
+    inline void sumOfThreeNumbers(int x,int y ,int z);
+    
+     //Non - Inline  member functions
+     
+     void sumOfFourNumbers(int x,int y ,int z,int u);
+    
+};
+
+//Inline  member functions
+inline void Math :: sumOfThreeNumbers(int x,int y ,int z ){
+    cout<<x+y+z<<endl;
+}
+
+ //Non - Inline  member functions
+ void Math :: sumOfFourNumbers(int x,int y ,int z ,int u){
+     cout<<"SUM WHILE NON INLINE IS : ";
+    cout<<x+y+z+u;
+}
+
+int main(){
+    Math m ;
+    m.sum(2,3);
+    
+    m.sumOfThreeNumbers(1,2,3);
+     m.sumOfFourNumbers(1,2,3,4);
+    
+}
