@@ -1,0 +1,130 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int i = 0;
+
+int add(int x,int y){
+    return x+y;
+}
+
+int add(int x,int y,int z){
+    return x+y+z;
+}
+
+void multiply(int a , int b ,int c){
+    cout<<a*b*c<<endl;
+}
+
+
+void multiply(int a , int b) {
+    cout<<a*b<<endl;
+}
+
+void helper(int *a){
+     *a = *a+10;
+     cout<<"Inside helper "<<*a<<" "<<endl;
+}
+
+ void  printNumber(int number ,int n){
+     
+     if(number > n){
+         return ;
+     }
+     
+     cout<<number<<" ";
+     number++;
+     printNumber(number,n);
+     
+ }
+ 
+ 
+  void  printNumberInDecreasingOrder(int n){
+     
+     if(n >=5){
+         return ;
+     }
+     
+     
+     printNumberInDecreasingOrder(n);
+    
+     cout<<n<<" ";
+       n++;
+
+     
+ }
+
+int main() {
+
+    //Reference Variable
+
+    // int  a = 7;
+    // int &b = a;
+    
+    // cout<<a<<endl;
+    // cout<<b<<endl;
+    
+    // a = a+10;
+    // cout<<b<<endl;
+    
+    //  b = b+10;
+     
+    //  cout<<a;
+    
+    
+    //Call by Value , call by reference & call by address
+    
+    
+    //Call by Value
+    
+    // int a = 3;
+    // helper(a);
+    // cout<<a;
+    
+    //3 - > as it is  not changed
+    
+    
+    //Call by Reference
+    
+    // int a = 3;
+    // helper(a);
+    // cout<<a;
+    //13 - > as it is changed
+    
+      //Call by Address
+    
+    // int a = 3;
+    // helper(&a);
+    // cout<<a;
+    //13 - > as it is changed
+    
+    int n = 1;
+   // printNumber(1,n);
+    printNumberInDecreasingOrder(n);
+    
+
+    return 0;
+}
+
+
+
+    
+    //Function Overloading
+    
+//   int value =   add(2,3);
+//   int value2 = add(2,3,4);
+//   cout<<value2;
+
+    // multiply(1,2,3);
+    //  multiply(1,3);
+    
+    //Scope Rules    
+    
+    // int i = 0;
+    // for(int i;;){
+    //     cout<<i<<endl;
+    //     i++;
+    //     if(i>3)break;
+    // }
+    // cout<<i;
