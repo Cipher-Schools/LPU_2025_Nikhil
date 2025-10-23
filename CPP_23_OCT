@@ -1,0 +1,72 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+class student{
+    public :
+    static int count ;
+    
+    student(){
+        count++;
+    }
+    
+    static void printCount(){
+       cout<<"Total count of Student is : "<<student::count;
+    }
+};
+
+int student :: count = 0;
+
+int main() {
+    
+    student s1,s2,s3;
+    
+    // cout<<"Total count of Student is : "<<student::count;
+    student::printCount();
+    return 0;
+}
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+class student{
+  
+   int a = 4;
+
+        void helper2(teacher t){
+                cout<<t.b;
+            }
+            
+     friend class teacher;    
+  
+};
+
+class teacher{
+    public : 
+        int b = 5;
+        
+   
+        void helper(student s){
+            cout<<s.a<<endl;
+        }
+        
+};
+
+
+int main() {
+    
+    student s;
+    teacher t;
+    t.helper(s);
+    s.helper2(t);
+  
+    return 0;
+}
+
+
+
+
+
+
+
+
