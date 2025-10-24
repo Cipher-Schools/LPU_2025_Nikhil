@@ -1,0 +1,60 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+int main() {
+  
+    int a = 10;
+     int*  ptr = &a;
+     int** q = &ptr;
+     
+     cout<<"The value of a is : "<<a<<endl;
+  
+     cout<<"The Address of a is : "<<&a<<endl;
+  
+     cout<<"The Address of a is : "<<ptr<<endl;
+     
+     cout<<"The Value of a is : "<<*ptr<<endl;
+     
+     cout<<"The Address of ptr is : "<<q<<endl;
+       
+     cout<<"The Value at address at ptr : "<<**q<<endl;
+     
+     
+     int arr[5] = {1,2,3,4,5};
+     int* c = arr;
+    //  cout<<c<<endl;
+    //  c++;
+    //  cout<<c<<endl;
+    //  c++;
+    //  cout<<c;
+    
+    for(int i = 0;i<5;i++){
+        // cout<<*c<<" ";
+        // c++;
+        
+        cout<<*(c+i)<<" ";
+        
+    }
+    
+    cout<<endl;
+    
+    
+    int s  = 4;
+    int d = 8;
+    
+    int* p1 = &s;
+    int* q1 = &d;
+    
+    int* f = p1+q1;
+    
+    cout<<f<<endl;
+     
+        
+        
+        
+        
+  
+
+    return 0;
+}
