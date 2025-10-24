@@ -1,0 +1,136 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Node{
+    int data;
+    Node* next;
+    
+    Node(int value){₹
+        data = value;
+        next = NULL;
+    }
+    
+};
+void printLL(Node* head){
+    Node* p = head;
+    while(p!=NULL){
+        cout<<p->data<<" ";
+         p = p->next;
+    }
+}
+
+int sumOfLL(Node* head){
+    Node* p = head;
+    int sum = 0;
+    
+    while(p!=NULL){
+        sum+=p->data;
+        p = p->next;
+    }
+    return sum;
+}
+
+int sizeOfLL(Node* head){
+    int cnt = 0;
+    Node* p = head;
+    
+    while(p!=NULL){
+        cnt++;
+        p = p->next;
+    }
+    
+    return cnt;
+    
+}
+
+int minOfLL(Node* head){
+    int mini = INT_MAX;
+    Node* p = head;
+    
+    while(p!=NULL){
+        if(mini>p->data){
+            mini = p->data;
+        }
+        p = p->next;
+    }
+    
+    return mini;
+    
+}
+
+int maxOfLL(Node* head){
+    int maxi = INT_MIN;
+    Node* p = head;
+    
+    while(p!=NULL){
+        if(maxi<p->data){
+            maxi = p->data;
+        }
+        p = p->next;
+    }
+    
+    return maxi;
+    
+}
+
+void minmaxOfLL(Node* head){
+    int mini = INT_MAX;
+    int maxi = INT_MIN;
+    
+    Node* p = head;
+    
+     while(p!=NULL){
+        if(maxi<p->data){
+            maxi = p->data;
+        }
+          if(mini>p->data){
+            mini = p->data;
+        }
+        p = p->next;
+    }
+    
+    cout<<"MINIMUM IS : "<<mini<<endl;
+    cout<<"MAXIMUM IS : "<<maxi<<endl;
+    
+}
+
+int cntOfAllOdd(Node* head){
+    Node* p = head;
+    int cnt = 0;
+    
+    while(p!=NULL){
+        if(p->data%2==1)cnt++;
+        
+        p=p->next;    
+        
+    }
+    
+    return cnt;
+}
+
+int main() {
+    
+    Node* head = new Node(12);
+    head->next = new Node(22);
+    head->next->next = new Node(25);
+    head->next->next->next = new Node(2);
+    head->next->next->next->next = new Node(-100);
+    
+    printLL(head);
+    cout<<endl;
+    int sum = sumOfLL(head);
+    cout<<"SUM IS : "<<sum<<endl;
+    int size = sizeOfLL(head);
+    cout<<"THE SIZE IS : "<<size<<endl;
+    int mini = minOfLL(head);
+    cout<<"THE Minimum  IS : "<<mini<<endl;
+    int maxi = maxOfLL(head);
+    cout<<"THE Maximum  IS : "<<maxi<<endl;
+    minmaxOfLL(head);
+    int cnt = cntOfAllOdd(head);
+    cout<<"COUNT OF ALL ODD IS : "<<cnt<<endl;
+    
+
+    return 0;
+}
