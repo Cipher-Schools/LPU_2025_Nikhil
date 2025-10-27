@@ -1,0 +1,135 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Node{
+    int data;
+    Node* next;
+    
+    Node(int value){
+        data = value;
+        next = NULL;
+    }
+};
+
+void PrintLL( Node* head){
+    Node* p = head;
+    
+    while(p!=NULL){
+        cout<<p->data<<" ";
+        p = p->next;
+    }
+}
+
+int findMaxElementInLL(Node* head){
+    Node* p = head;
+    int maxi = INT_MIN;
+    
+    while(p!=NULL){
+        if(maxi< p->data){
+            maxi = p->data;
+        }
+        
+        p = p->next;
+        
+    }
+    return maxi;
+   
+}
+int findMinElementInLL(Node* head){
+    Node* p = head;
+    int mini = INT_MAX;
+    
+    while(p!=NULL){
+        if(mini> p->data){
+            mini = p->data;
+        }
+        
+        p = p->next;
+        
+    }
+    return mini;
+   
+}
+
+int count(Node* head){
+    Node* p = head;
+    int cnt = 0;
+    
+    while(p!=NULL){
+        cnt++;
+        
+        p = p->next;
+        
+    }
+    return cnt;
+   
+}
+
+int countOdd(Node* head){
+    Node* p = head;
+    int cnt = 0;
+    
+    while(p!=NULL){
+       if(p->data%2==1)cnt++;
+        
+        p = p->next;
+        
+    }
+    return cnt;
+   
+}
+
+
+
+
+int sum(Node* head){
+    Node* p = head;
+    int sum = 0;
+    
+    while(p!=NULL){
+
+        sum+= p->data;
+        p = p->next;
+        
+    }
+    return sum;
+   
+}
+
+void findMinMaxElementInLL(Node* head){
+    Node* p = head;
+    int maxi = INT_MIN;
+    int mini = INT_MAX;
+    
+    while(p!=NULL){
+        if(maxi< p->data){
+            maxi = p->data;
+        }
+         if(mini> p->data){
+            mini = p->data;
+        }
+        
+        p = p->next;
+        
+    }
+    cout<<maxi << " "<<mini;
+   
+}
+
+int main() {
+    
+    Node* head = new Node(12);
+    head->next = new Node(22);
+    head->next->next = new Node(32);
+    head->next->next->next = new Node(42);
+    
+     PrintLL(head);
+     cout<<endl;
+     
+     int maxEle = findMaxElementInLL(head);
+     cout<<"MAX ELEMENT IS : "<<maxEle<<endl;
+    
+
+    return 0;
+}
