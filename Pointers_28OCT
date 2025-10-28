@@ -1,0 +1,71 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+// int* getFunction(){
+//     int a = 12;
+    
+//     return &a;
+// }
+
+int main() {
+    // int a = 12;
+    // float f  = 3.3;
+    // char ch = 'c';
+    
+    // void* ptr;
+    // ptr = &a;
+    
+    // cout<<"The Vlaue of a is  : "<<a<<endl;
+    
+    // cout<<"The Address of a is  : "<<ptr<<endl;
+    
+    // cout<<"The Value of a is  : "<<*(int*)ptr<<endl;
+    
+    // ptr = &f;
+    
+    //  cout<<"The Vlaue of f is  : "<<f<<endl;
+    
+    // cout<<"The Address of f is  : "<<ptr<<endl;
+    
+    // cout<<"The Value of f is  : "<<*(int*)ptr<<endl;
+    
+    //  ptr = &ch;
+    
+    //  cout<<"The Vlaue of ch is  : "<<ch<<endl;
+    
+    // cout<<"The Address of ch is  : "<<ptr<<endl;
+    
+    // cout<<"The Value of ch is  : "<<*(char*)ptr<<endl;
+    
+    
+    
+   // Dangling Pointers
+   
+//   int a = 12;
+//   int* ptr =&a;
+//   delete(a);
+//   cout<<*ptr<<endl;
+   
+//   if(ptr!=nullptr){
+//       cout<<*ptr
+//   }
+
+    // int* value = getFunction();
+    // cout<<value;
+    
+    // int *p1 = new int(12);
+    // int *p2 = p1;
+    // delete p1;
+    // cout<<*p2;
+    
+    
+    //wild pointers
+    
+    int* ptr;
+    ptr = 12;
+    cout<<ptr;
+    
+
+    return 0;
+}
