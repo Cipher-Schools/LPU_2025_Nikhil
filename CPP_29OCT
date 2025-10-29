@@ -1,0 +1,99 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+class student{
+   int age, rollno;
+   
+//   public: void setValue(int age,int rollno){
+//       this->age = age;
+//       this->rollno = rollno;
+//   }
+  
+   public: void setValue(int age,int rollno){
+      this->age = age;
+      this->rollno = rollno;
+  }
+
+//  public :   student(int age,int rollno){
+//       age = age;
+//       rollno = rollno;
+//   }
+   
+   void getValue(){
+       cout<<age<<" "<<rollno<<endl;
+   }
+   
+};
+
+int main() {
+  //student s;
+//   s.setValue(23,222);
+//   s.getValue();
+  
+//   int a = 23;
+//   int* ptr = &a;
+
+    // cout<<ptr --> address;
+    // cout<<*ptr -->value
+
+    //student* ptr = &s;
+    
+    // (*ptr).setValue(12,22);
+    // (*ptr).getValue();
+    
+    // ptr->setValue(12,22);
+    // ptr->getValue();
+    
+    
+    // This Pointer
+    //student s(12,23);
+    // student s;
+    // s.setValue(12,23);
+    // s.getValue();
+    
+    
+    int size = 5;
+    // int *ptr = new int[10];
+    student *s = new student[size];
+    student* head = s;
+    
+    for(int i = 0;i<size;i++){
+        int a ,b;
+        cin>>a>>b;
+        s->setValue(a,b);
+        s++;
+    }
+    
+    for(int i = 0;i<size;i++){
+        head->getValue();
+        head++;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+  
+   
+}
