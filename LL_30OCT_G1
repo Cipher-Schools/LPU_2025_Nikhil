@@ -1,0 +1,211 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Node{
+    int data;
+    Node* next;
+    
+    Node(int value){
+        data = value;
+        next = NULL;
+    }
+};
+
+void PrintLL( Node* head){
+    Node* p = head;
+    
+    while(p!=NULL){
+        cout<<p->data<<" ";
+        p = p->next;
+    }
+}
+
+void PrintLLCircular( Node* head){
+    Node* p = head;
+    
+    do{
+         cout<<p->data<<" ";
+        p = p->next;
+    }
+    while(p!=head);
+}
+
+void  insertionInLL(Node* head,int pos,int val){
+    Node* p = head;
+    Node* q = nullptr;
+    
+    for(int i = 1;i<pos ;i++){
+        q= p;
+        p = p->next;
+    }    
+    
+    Node* newNode = new Node(val);
+    newNode->next= p ;
+    q->next = newNode;
+
+    
+}
+
+
+void  insertionInLLCircular(Node* head,int pos,int val){
+    Node* p = head;
+    Node* q = nullptr;
+    
+    for(int i = 1;i<pos ;i++){
+        q= p;
+        p = p->next;
+    }    
+    
+    Node* newNode = new Node(val);
+    newNode->next= p ;
+    q->next = newNode;
+
+    
+}
+
+
+
+
+void  insertionInLLHead(Node* head,int val){
+ 
+  Node* p = head;
+   
+    
+    while(p->next!=nullptr){
+        cout<<p->data<<" ";
+        p = p->next;
+    } 
+    
+    Node* newNode = new Node(val);
+    p->next= newNode;
+
+}
+
+
+
+
+
+void  insertionInLLTail(Node* head,int val){
+ 
+    Node* newNode = new Node(val);
+    newNode->next= head ;
+    head = newNode;
+
+}
+
+
+
+
+void deletion(Node* head,int pos){
+    
+    Node* p = head;
+    Node* q = nullptr;
+    
+    for(int i = 1;i<pos;i++){
+        q=p;
+        p = p->next;
+    }
+    
+    q->next = p->next;
+    delete p;
+    
+}
+
+void deletionCircular(Node* head,int pos){
+    
+    Node* p = head;
+    Node* q = nullptr;
+    
+    for(int i = 1;i<pos;i++){
+        q=p;
+        p = p->next;
+    }
+    
+    q->next = p->next;
+    delete p;
+    
+}
+
+void deletionCircularHead(Node* head){
+    
+      if(!head)return ;
+        //  if(head==nullptr)return ;
+    
+    if(head->next == head){
+        delete head;
+        return ;
+    }
+    
+  
+    
+    Node* p = head;
+    while(p->next !=head){
+        p = p->next ;
+    }
+    
+    Node* temp = head;
+    
+    p->next = head->next;
+    head= head->next;
+    
+    delete temp;
+}
+
+void insertionAtHead(Node* head,int value){
+    Node* p =head;
+    
+    while(p->next!=head){
+        p=p->next;
+    }
+    
+    Node* newNode = new Node(val);
+    p->next = newNode;
+    newNode->next = head;
+    head= newNode;
+    
+}
+
+void circularLLOps(Node* head){
+    Node* p = head;
+    int sum = 0 , maxi=INT_MIN,mini = INT_MAX,cnt = 0;
+    do{
+        sum+=p->data;
+        mini=min(mini,p->data);
+        maxi=max(maxi,p->data);
+        cnt++;
+        p = p->next;
+        
+    }while(p!=head);
+    
+    cout<<sum<<endl;
+    cout<<cnt<<endl;
+    cout<<maxi<<endl;
+    cout<<mini<<endl;
+}
+
+
+int main() {
+    
+    Node* head = new Node(12);
+    head->next = new Node(22);
+    head->next->next = new Node(32);
+    head->next->next->next = new Node(42);
+    head->next->next->next->next = new Node(52);
+    
+    //  12 22 32 42 52-> 12 
+    
+     head->next->next->next->next->next = head;
+    
+     PrintLLCircular(head);
+    //  int pos = 3;
+    //  int value = 100;
+     cout<<endl;
+     //insertionInLL(head,pos ,value);
+     //deletion(head,pos);
+     //PrintLL(head);
+     
+   
+
+    return 0;
+}
