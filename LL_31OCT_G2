@@ -1,0 +1,187 @@
+// Online C++ compiler to run C++ program online
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// struct Node{
+//     int data;
+//     Node* next;
+    
+//     Node(int value){
+//         data = value;
+//         next = NULL;
+//     }
+// };
+
+// void PrintCircularLL( Node* head){
+//     Node* p = head;
+    
+//     do{
+//         cout<<p->data<<" ";
+//         p = p->next;
+        
+//     }
+//     while(p!= head);
+// }
+
+
+// void  insertionInCircularLL(Node* head,int pos,int val){
+//     Node* p = head;
+//     Node* q = nullptr;
+    
+//     for(int i = 1;i<pos ;i++){
+//         q= p;
+//         p = p->next;
+//     }    
+    
+//     Node* newNode = new Node(val);
+//     newNode->next= p ;
+//     q->next = newNode;
+
+    
+// }
+
+// void insertionInCircularLLHead(Node* head,int val){
+//     Node* p = head;
+    
+//     while(p->next!=head){
+//         p = p->next;
+//     }
+    
+//     Node* newNode = new Node(val);
+//     p->next = newNode;
+//     newNode->next = head;
+//     head = newNode;
+    
+// }
+
+// void insertionInCircularLLTail(Node* head,int val){
+//     Node* p = head;
+    
+//     while(p->next!=head){
+//         p = p->head;
+//     }
+    
+//     Node* newNode = new Node(val);
+//     p->next  = newNode ;
+//     newNode->next = head;
+    
+// }
+
+
+
+
+
+// void  insertionInLLTail(Node* head,int val){
+ 
+//     Node* newNode = new Node(val);
+//     newNode->next= head ;
+//     head = newNode;
+
+// }
+
+
+
+
+// void deletionInCricularLL(Node* head,int pos){
+    
+//     Node* p = head;
+//     Node* q = nullptr;
+    
+//     for(int i = 1;i<pos;i++){
+//         q=p;
+//         p = p->next;
+//     }
+    
+//     q->next = p->next;
+//     delete p;
+    
+// }
+
+// void deletionInCircularLLHead(Node* head){
+//     Node* p = head;
+//     Node* q = head;
+    
+    
+//     while(p->next!=head)p=p->next;
+    
+//     p->next = head->next;
+//     head=head->next;
+//     delete q;
+    
+    
+// }
+
+
+// int main() {
+    
+//     Node* head = new Node(12);
+//     head->next = new Node(22);
+//     head->next->next = new Node(32);
+//     head->next->next->next = new Node(42);
+//     head->next->next->next->next = new Node(52);
+
+//      head->next->next->next->next->next = head;
+
+//      PrintCircularLL(head);
+    
+
+//     return 0;
+// }
+
+
+
+
+// -------------Doubly Linked list -----------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Node{
+    int data;
+    Node* next;
+    Node* prev;
+    
+    Node(int value){
+        data = value;
+        next = NULL;
+        prev= NULL;
+    }
+};
+
+void printingDoublyLL( Node* head){
+    Node* p = head;
+ 
+   while(p!=nullptr){
+       cout<<p->data<<" ";
+       p = p->next;
+   }
+}
+
+
+int main() {
+    
+    Node* head = new Node(12);
+    head->next = new Node(22);
+    head->next->prev = head;
+    
+    head->next->next = new Node(32);
+    head->next->next->prev = head->next;
+    
+    printingDoublyLL(head);
+    
+
+    return 0;
+}
