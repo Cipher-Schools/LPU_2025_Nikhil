@@ -1,0 +1,105 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main() {
+    
+    
+    //Declaration 
+    //string s  = "nikhil thakur";
+    // string s("nikhil thakur");
+    // s="nikhil thakur";
+    
+  //  string s="nikhil" ;
+    //getline(cin,s);
+    
+    //cout<<s;
+    
+   // int len = s.length();
+    
+    // for(int i = 0;i<6;i++){
+    //     cout<<s[i]<<" ";
+    // }
+    
+    // string s2 = "thakur";
+    // cout<<s+" "<<s2;
+    
+   // s2.append("Hello sir");
+   
+   //string s = "nikhil thakur";
+   
+//   string temp = s.substr(0,9);
+   
+//   cout<<temp;
+//   cout<<endl;
+//   temp.push_back('a');
+//   temp.pop_back();
+//   temp.pop_back();temp.pop_back();temp.pop_back();temp.pop_back();temp.pop_back();temp.pop_back();
+
+    //   cout<<temp;
+
+    // for(auto& x : s){
+    //     cout<<x<<" ";
+    // }
+    
+    // string s = "kannk";
+    // int len = s.length();
+    
+    // int i = 0,j = len -1 ;
+    
+    // bool flag = true;
+    
+    // while(i<=j){
+    //     if(s[i]!=s[j]){
+    //         flag = false;
+    //         break;
+    //     }
+    //     i++;
+    //     j--;
+    // }
+    // if(flag){
+    //     cout<<"Yes ";
+    // }
+    // else{
+    //     cout<<"No";
+    // }
+    
+    int n = 3;
+    
+    int arr[n][n];
+    
+    for(int i = 0;i<n;i++){
+        for(int j = 0;j<n;j++){
+            cin>>arr[i][j];
+        }
+    
+    
+    cout<<endl;
+    
+    int freq[1000];
+    
+    for(int i = 0;i<n;i++){
+        for(int j = 0;j<n;j++){
+            freq[arr[i][j]]++;
+        }
+    }
+    
+    int target = 2;
+    
+    cout
+    
+    
+    
+    // for(int i = 0;i<n;i++){
+    //     for(int j = 0;j<n;j++){
+    //         cout<<arr[j][i]<<" ";
+    //     }
+    //     cout<<endl;
+    // }
+    
+    
+    
+
+    return 0;
+}
