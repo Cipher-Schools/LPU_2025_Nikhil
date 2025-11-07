@@ -1,0 +1,69 @@
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+int main() {
+    
+//     int n = 4;
+    
+//     int arr[n][n]={{1,2,5,4},{4,3,5,9},{5,4,1,34},{2,6,8,3}};
+    
+//   int st = 0 , left = 0,right = n-1,end = n-1;
+   
+//   int totalNodes = 0;
+   
+   
+//   while(totalNodes< (n*n)){
+    
+//   for(int i = left ;i<=right;i++){
+//       cout<<arr[st][i]<<" ";
+//       totalNodes++;
+//   }
+//   st++;
+   
+//   for(int i =st;i<=end;i++){
+//       cout<<arr[i][right]<<" ";
+//       totalNodes++;
+//   }
+//   right--;
+   
+//   for(int i = right;i>=left;i--){
+//       cout<<arr[end][i]<<" ";
+//       totalNodes++;
+//   }
+//   end--;
+   
+//   for(int i = end;i>=st;i--){
+//       cout<<arr[i][left]<<" ";
+//       totalNodes++;
+//   }
+//   left++;
+//   }
+
+    int n = 3;
+    
+    int arr[n][n]={{1,2,3},{4,5,6},{7,8,9}};
+    
+    int row = 0,col = n-1;
+    
+    int target = 57;
+    bool flag = false;
+    while(row<n && col>=0){
+        if(arr[row][col] == target){
+            flag = true;
+            break;
+        }
+        else if(arr[row][col]>target){
+            col--;
+        }
+        else row++;
+    }
+    
+    if(flag)cout<<"Yes";
+    else cout<<"No";
+    
+    
+     
+    return 0;
+}
