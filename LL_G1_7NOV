@@ -1,0 +1,83 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+// struct Node{
+//     int data;
+//     Node* next;
+    
+//     // Node(int value){
+//     //     data = value;
+//     //     next = NULL;
+//     // }
+// };
+
+// void PrintLL( Node* head){
+//     Node* p = head;
+    
+//     while(p!=NULL){
+//         cout<<p->data<<" ";
+//         p = p->next;
+//     }
+// }
+
+
+// Node* createNode(int data){
+//     Node* newNode = new Node(data);
+//     return newNode;
+// }
+
+int main() {
+    
+    // Node* head = new Node(12);
+    // Node* temp = head;
+    // head->next = new Node(22);
+    // head->next->next = new Node(32);
+    // head->next->next->next = new Node(42);
+    // head->next->next->next->next = new Node(52);
+    
+   // int arr[5]={1,2,3,4,5};
+    
+    // for(int i = 1;i<n;i++){
+    //     // int data;
+    //     // cin>>data
+        
+    //     //1st way
+    //     // Node* newNode = new Node(arr[i]);
+    //     // temp->next = newNode;
+    //     // temp = newNode;
+        
+    //     //2nd way
+    //     temp->next = createNode(arr[i]);
+    //     temp = newNode;
+        
+        
+    // }
+    
+    string s= "a guy wen tot akhdakjh askdjhakshd sdabbbbbbbbbbbbbbbbbbbbb";
+    
+    int freq[26]={0};
+    int maxi = 0;
+    int maxIdx = 0;
+    
+    for(auto& x : s){
+        if(x==' ')continue;
+         freq[x-'a']++;
+        //freq[x-97]++;
+       // cout<<"hello"<<endl;
+    }
+    
+    for(int i = 0;i<26;i++){
+       if(maxi<freq[i]){
+           maxi = freq[i];
+           maxIdx = i;
+       }
+    }
+
+     //char ch = maxIdx +'a';
+     cout<<maxIdx+97;
+        // cout<<maxIdx + 97;  
+
+
+    return 0;
+}
