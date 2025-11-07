@@ -1,0 +1,102 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+// struct Node{
+//     int data;
+//     Node* next;
+    
+//     // Node(int value){
+//     //     data = value;
+//     //     next = NULL;
+//     // }
+// };
+
+// void PrintLL( Node* head){
+//     Node* p = head;
+    
+//     while(p!=NULL){
+//         cout<<p->data<<" ";
+//         p = p->next;
+//     }
+// }
+
+// Node* createNode(int data){
+//     Node* newNode = new Node(data);
+//     return newNode;
+// }
+
+
+
+
+int main() {
+    
+    // Node* head = new Node(12);
+    // head->next = new Node(22);
+    // head->next->next = new Node(32);
+    // head->next->next->next = new Node(42);
+    // head->next->next->next->next = new Node(52);
+    
+    // Node* temp = head;
+    
+    // int n = 5;
+    // int arr[n]={1,2,3,4,5};
+    
+    // for(int i = 0;i<n;i++){
+        // int data;
+        // cin>>data;
+        
+        // Node* newNode = new Node(data);
+        
+        // Node* newNode = new Node(arr[i]);
+        // temp->next = newNode;
+        // temp = newNode;
+        
+    //     Node* p  = createNode(arr[i]);
+    //     temp->next = p;
+    //     temp = p;
+    // }
+    
+  
+  string s = "aaaaaaaaa bbbbbbbbbbbbbbbbbbbb shdsdshgdkshdbksh";
+  int freq[26]={0};
+  
+  
+//   for(auto & x : s){
+      
+//   }
+
+    for(int i = 0;i<s.length();i++){
+        if(s[i]==' ')continue;
+        freq[s[i]-'a']++;
+    }
+    
+    int maxi = 0;
+    int maxIdx = 0;
+    
+    for(int i =0;i<26;i++){
+        if(freq[i]>maxi){
+            maxi = freq[i];
+            maxIdx = i;
+        }
+    }
+    
+    char ch = maxIdx +'a';
+    cout<<ch;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+    return 0;
+}
