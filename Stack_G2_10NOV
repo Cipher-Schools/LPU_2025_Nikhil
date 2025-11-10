@@ -1,0 +1,88 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+class Stack{
+    public :
+    int top;
+    int arr[100];
+    
+    Stack(){
+        top=-1;
+    }
+    
+    void push(int val){
+        if(top==100){
+            cout<<"Stack is Full/overflow"<<endl;
+        }
+        else{
+            top++;
+            arr[top]=val;
+        }
+    }
+    
+    void pop(){
+        if(top==-1){
+            cout<<"Stack is Empty/UnderFlow"<<endl;
+        }
+        else{
+            top--;
+        }
+    }
+    
+    bool isEmpty(){
+        // if(top==-1){
+        //     return true;
+        // }
+        // else return false;
+        
+        return top==-1;
+    }
+    
+    int peek(){
+        if(top==-1){
+            return -1;
+        }
+        
+        return arr[top];        
+        
+    }
+    
+    void traversal(){
+        if(top==-1){
+            cout<<"Stack is Empty"<<endl;
+        }
+        else{
+            int i = top;
+            while(i>=0){
+                cout<<arr[i]<<" ";
+                i--;
+            }
+        }
+    }
+    
+};
+
+int main() {
+    
+    Stack st;
+    st.push(10);
+    st.push(20);
+    st.push(30);
+    st.push(40);
+    st.push(50);
+    
+    // 10 20 30 40 50
+    
+    st.pop();
+    st.pop();
+    
+    cout<<st.peek();
+    
+//   cout<< st.isEmpty();
+    
+   // st.traversal();
+    
+
+    return 0;
+}
