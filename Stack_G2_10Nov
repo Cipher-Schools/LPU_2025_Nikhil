@@ -1,0 +1,84 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Node{
+    int data;
+    Node* next;
+    
+    Node(int val){
+        data=val;
+        next=nullptr;
+    }
+};
+
+
+class Stack{
+    
+   public: Node* top;
+    
+    Stack(){
+        top=nullptr;
+    }
+    
+    void push(int data){
+        Node* newNode = new Node(data);
+        newNode->next = top;
+        top=newNode;
+    }
+    
+    void pop(){
+        Node* temp = top;
+        top = top->next;
+        delete temp;
+    }
+    
+    bool isEmpty(){
+        // if(top==nullptr){
+        //     return true;
+        // }
+        // else return false;
+        
+        return top==nullptr;
+    }
+    
+    int peek(){
+        if(top==nullptr){
+            return -1;
+        }
+        else {
+            return top->data;
+        }
+    }
+    
+    void traversal(){
+        Node* temp = top;
+        
+        while(temp!=nullptr){
+            cout<<temp->data<<" ";
+            temp=temp->next;
+        }
+    }
+};
+
+
+int main() {
+  
+    Stack st;
+    st.push(10);
+    st.push(20);
+    st.push(30);
+    st.push(40);
+    st.push(50);
+    
+    st.pop();
+    st.pop();
+    st.pop();
+    
+    cout<<st.peek()<<endl;
+    
+    st.traversal();
+    
+    
+    return 0;
+}
