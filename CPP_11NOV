@@ -1,0 +1,68 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+class student{
+    public :int age;
+    int *marks;
+    // string name ;
+    
+    
+    // /Default constructor
+    // student(){
+    //   // age = 12;
+    // }
+    
+   // Paramterized constructor
+    student (int ageOfStudent ,int m){
+        age = ageOfStudent;
+         marks = new int(m);
+    }
+    
+    
+    //Construtor with default arguments
+    // student (int ageOfStudent = 20,string nameofStudent = "Unknown"){
+    //     age = ageOfStudent;
+    //     name = nameofStudent;
+    // }
+    
+    
+    
+    student(const student &s){
+        age = s.age;
+        marks = new int(*s.marks);
+    }
+    
+    
+    //Destructor
+    // ~student(){
+    //     cout<<"Destructor called"<<endl;
+    // }
+    
+    
+    
+};
+
+int main() {
+
+    // student s1(34);
+    // // student s1;
+    // cout<<s1.age;
+    
+//     student s1(23,"Nikhil");
+//   // student s2("Yash");
+//     student s3;
+    
+//     cout<<s3.age<<" "<<s3.name<<endl;
+    // cout<<s3.age<<" "<<s3.name;
+
+
+    student s1(12,22);
+    cout<<s1.age<<endl;
+    
+    student s2 = s1;
+    cout<<*s2.marks;
+    
+
+    return 0;
+}
