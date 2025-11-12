@@ -1,0 +1,108 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+  // vector<int>vec;
+   
+   //vector<int>vec = {1,2,3,4,5,6};
+   
+  // vector<int>vec(5);
+   
+//   vec.push_back(20);
+//   vec.push_back(30);
+//   vec.push_back(112);
+//   vec.push_back(-30);
+//   vec.push_back(212);
+   
+  // vec.pop_back();
+   
+  // int n = vec.size();
+   
+//   for(int i = 0;i<n;i++){
+//     //   int data;
+//     //   cin>>data;
+//     //   vec[i]=data;
+    
+//          cin>>vec[i];
+//   }
+   
+//   int maxi = INT_MIN;
+   
+//   for(int i = 0;i<n;i++){
+//       if(maxi<vec[i]){
+//           maxi = vec[i];
+//       }
+//   }
+
+   //Basic operations in  vector
+   
+//   int maxEle = *max_element(vec.begin(),vec.end());
+   
+//   int minEle = *min_element(vec.begin(),vec.end());
+   
+//   int sum =  accumulate(vec.begin(),vec.end() , 0);
+   
+   //Sort The vector
+   
+//   sort(vec.begin(),vec.end());
+   
+//   for(int i = 0;i<n;i++){
+//       cout<<vec[i]<<" ";
+//   }
+
+
+
+//Reverse The vector
+
+// reverse(vec.begin(),vec.end());
+
+//   for(int i = 0;i<n;i++){
+//       cout<<vec[i]<<" ";
+//   }
+
+
+//Decending order
+//   sort(vec.begin(),vec.end(),greater<int>());
+   
+//   for(int i = 0;i<n;i++){
+//       cout<<vec[i]<<" ";
+//   }
+
+   
+   //cout<<sum;
+   
+   
+//   Map
+
+    // map<int,int>mp;
+    unordered_map<int,int>mp;
+    
+    vector<int>vec= {1,1,2,3,4,3,2,1,3,4,2,3,4,2,1,1,2,3,4};
+    
+    for(int i = 0;i<vec.size();i++){
+        mp[vec[i]]++;
+    }
+    
+    int max_ele = 0;
+    int max_freq = 0;
+    for(auto &x:mp){
+        int key = x.first;
+        int data = x.second;
+        
+        if(data>max_freq){
+            max_freq= data;
+            max_ele = key;
+        }
+        
+    }
+    
+    cout<<max_ele<<" occured : "<<max_freq<<" times";
+    
+   
+   
+
+    return 0;
+}
+
