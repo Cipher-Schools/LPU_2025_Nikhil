@@ -1,0 +1,54 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ofstream out("data.txt");   // open / create file
+    out << "Hellooooo World\n";     // write to file
+    out.close();                // close file
+
+
+
+    //I want to read from a file
+
+    ifstream in("data.txt");
+    string line;
+    while(getline(in, line)) {
+        cout << line << endl;
+    }
+    in.close();
+
+
+//  Mode	Meaning
+// ios::in	Read
+// ios::out	Write
+// ios::app	Append
+// ios::binary	Binary file
+// ios::trunc	Delete old content & write new
+
+fstream file;
+file.open("data.txt", ios::out | ios::app); // append mode
+file << "another hello from nikhil thakur \n";
+file.close();
+
+
+// | Function       | Uses                     |
+// | -------------- | ------------------------ |
+// | `getline()`    | Read a full line         |
+// | `file.eof()`   | True when end of file    |
+// | `file.fail()`  | Check read/write failure |
+// | `file.seekg()` | Move read pointer        |
+// | `file.seekp()` | Move write pointer       |
+
+
+ifstream in("data.txt");
+in.seekg(0, ios::end);
+cout << "File size: " << in.tellg() << " bytes\n";
+
+
+
+}
+
+
+
+
