@@ -1,0 +1,62 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main() {
+    
+    vector<int>vec = {1,2,2,3,3,4,2,5};
+    int n = vec.size();
+    
+    unordered_map<int,int>mp;
+    
+    // for(int i = 0;i<n;i++){
+    //     mp[vec[i]]=i;
+    // }
+    
+    
+    //last occurence
+    // for(auto& x : mp){
+    //     int key = x.first;
+    //     int value = x.second;
+        
+    //     cout<<key<<" occured at "<<value <<" th index "<<endl;
+    // }
+    
+    
+    
+    //sum
+    
+    
+    // for(int i = 0;i<n;i++){
+    //     mp[vec[i]]++;
+    // }
+    
+    // int sum = 0;
+    // for(auto& x: mp){
+    //     int key = x.first;
+    //     int value = x.second;
+        
+    //     sum+=(key *value);
+        
+    // }
+    
+    // cout<<sum<<endl;
+    
+    
+    //First occurence
+    
+    for(int i = 0;i<n;i++){
+       if(mp.find(vec[i])==mp.end()) mp[vec[i]]=i;
+    }
+    
+        for(auto& x : mp){
+        int key = x.first;
+        int value = x.second;
+        
+        cout<<key<<" occured at "<<value <<" th index "<<endl;
+    }
+    
+
+    return 0;
+}
