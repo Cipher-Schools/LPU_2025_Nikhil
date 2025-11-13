@@ -1,0 +1,155 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+// class Queue{
+//     public : int arr[100];
+//     int rear ;
+//     int front ;
+//     int size ;
+    
+//     Queue(){
+//         rear = -1;
+//         front = 0;
+//         size = 0;
+//     }
+    
+//     bool isFull(){
+//         if(size==100){
+//             return true;
+//         }
+//         return false;
+        
+//         // return size ===100;
+//     }
+    
+//     bool isEmpty(){
+//         if(size==0){
+//             return true;
+//         }
+//         return false;
+//         // return size==0;
+//     }
+    
+//     void enqueue(int x){
+//         if(isFull()==true){
+//             cout<<"Queue is Full"<<endl;
+//         }
+//         else{
+//             // rear++;
+//             rear = (rear+1)%100;
+//             arr[rear]=x;
+//             size++;
+//         }
+//     }
+    
+//     void dequeue(){
+//         if(isEmpty()==true){
+//             cout<<"Queue is EMpty"<<endl;
+//         }
+//         else{
+//             // front++;
+//             front=(front+1)%100;
+//             size--;
+//         }
+//     }
+    
+//     int getFront(){
+//         if(isEmpty()){
+//             return -1;
+//         }
+//         return arr[front];
+//     }
+    
+//     int getRear(){
+//         if(isEmpty()){
+//             return -1;
+//         }
+//         return arr[rear];
+//     }
+    
+//     void traversal(){
+//         int temp =front;
+//         int count = size;
+//         while(count>0){
+//             cout<<arr[temp]<<" ";
+//             temp =(temp+1)%100;
+//             count--;
+//         }
+//     }
+    
+// };
+
+
+struct Node{
+    int data;
+    Node* next;
+    
+    Node(int x){
+        data=x;
+        next=nullptr;
+    }
+};
+
+class Queue{
+    public : Node* front;
+    Node* rear;
+    
+    Queue(){
+        front=nullptr;
+        rear=nullptr;
+    }
+    
+    void enqueue(int x){
+        Node* newNode = new Node(x);
+        if(front==nullptr){
+            front = newNode;
+            rear = newNode;
+        }
+        else{
+            rear->next = newNode;
+            rear=newNode;
+        }
+    }
+    
+    void dequeu(){
+        if(front==nullptr){
+            cout<<"Queue is Empty"<<endl;
+        }
+        else{
+            Node* temp = front;
+            front=front->next;
+            delete temp;
+        }
+    }
+    
+    bool isEmpty(){
+        return front==nullptr;
+        // return rear ==nullptr;
+    }
+    
+   void traversal(){
+       Node* temp = front;
+       while(temp!=nullptr){
+           cout<<temp->data<<" ";
+           temp =temp->next;
+       }
+   }
+    
+}
+
+int main() {
+    Queue q;
+    q.enqueue(10);
+    q.enqueue(20);
+    q.enqueue(30);
+    q.enqueue(40);
+    q.enqueue(50);
+    
+    q.dequeue();
+    q.dequeue();
+    
+    q.traversal();
+
+    return 0;
+}
