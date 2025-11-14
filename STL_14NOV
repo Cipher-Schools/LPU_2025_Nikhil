@@ -1,0 +1,55 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    vector<int>vec= {1,1,12,2,3,2,3,1,1,2,4,2,4,2,4,3,3};
+    vector<int>vec2= {1,2,3,4,5};
+    
+    vector<bool>check(1000,false);
+    
+    set<int>st;
+    unordered_map<int,int>mp;
+    
+    for(auto& x : vec){
+        st.insert(x);
+    }
+     for(auto& x : vec){
+        mp[x]=1;
+    }
+    
+    for(int i = 0;i<vec.size();i++){
+        check[vec[i]]=true;
+    }
+    
+        int sum = 0;
+    
+    
+    for(auto & x: vec2){
+        if(check[x]==true)sum+=x;
+    }
+    // cout<<st.size();
+    //  st.erase(5);
+    
+    // for(auto& x: st){
+    //     cout<<x<<" ";
+    // }  
+    // cout<<endl;
+    // cout<<st.size();
+    
+
+    // for(auto& x : vec2){
+    //     if(st.find(x)!=st.end())sum+=x;
+    // }
+    
+    // for(auto& x : vec2){
+    //     if(mp.find(x)!=mp.end())sum+=x;
+    // }
+    
+    cout<<sum;
+    
+   
+        
+            
+    return 0;
+}
