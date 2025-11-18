@@ -1,0 +1,231 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+class Stack{
+    
+    public : int arr[100];
+    int top ;
+    
+    Stack(){
+        top = -1;
+    }
+    
+    void push(int value){
+        if(top==100){
+            cout<<"Stack is Full/OverFlow";
+        }
+        else{
+            top++;
+            arr[top]=value;
+        }
+    }
+    
+    void pop(){
+        if(top==-1){
+            cout<<"Stack is Empty/underflow"<<endl;
+        }
+        else{
+            top--;
+        }
+    }
+    
+    bool isEmpty(){
+        // if(top==-1){
+        //     return true;
+        // }
+        // else return false;
+        
+        return top==-1;
+    }
+    
+    int peek(){
+        
+        if(top==-1){
+            return -1;
+        }
+        
+        return arr[top];
+    }
+    
+    void traversal(){
+        for(int i  = top;i>=0;i--){
+            cout<<arr[i]<<" ";
+        }
+        cout<<endl;
+    }
+    
+};
+
+bool checkBalancec(string str){
+      stack<char>st;
+    
+    bool flag = false;
+    
+    for(auto& x : newstr){
+        if(x=='(')st.push(x);
+        else {
+            if(st.empty()){
+                return false;
+                 
+            }
+            st.pop();
+        }
+    }
+    
+    // if(st.size()==0 ){
+    //   return true
+    // }
+    // else{
+    //     return false;
+    // }
+    
+    return st.size()==0;
+
+}
+
+
+int main() {
+    
+    
+    // q - > reverse the string 
+    
+    
+    string s = "hello";
+    
+    //1st way STL WAY
+    
+    // reverse(s.begin(),s.end());
+    
+    //2nd Way
+    
+    // print the string using for loop in reverse order
+    
+    // 3rd Way two pointer
+    
+    // Swapping logic
+    
+    // 4th using stack 
+    
+    //  //our way 
+    // //  Stack st;
+     
+    //  //stl way
+    //  stack<char>st;
+     
+    //  string temp =""
+     
+    //  for(auto& x : s)st.push(x);
+     
+    //  while(!st.empty()){
+    //      temp+=st.top();
+    //      st.pop();
+    //  }
+     
+    //  cout<<temp;
+    
+//   2 Q - > check balanced paranthesis
+
+//1st Way using stack 
+// tc - O(n)
+// sc = O(n)
+
+    string newstr = = "(())"
+    
+    stack<char>st;
+    
+    bool flag = false;
+    
+    for(auto& x : newstr){
+        if(x=='(')st.push(x);
+        else {
+            if(st.empty()){
+                flag = true;
+                 cout<<"NOT BALanced";
+                 break;
+                
+                 
+            }
+            st.pop();
+        }
+    }
+
+    
+    if(st.size()==0 && flag ==false){
+        cout<<"YES BALanced";
+    }
+    else{
+        cout<<"NOT BALanced";
+    }
+    
+    
+    //2nd way
+    
+    int count = 0;
+    
+    for(auto& x: str){
+        if(x=='(')count++;
+        else{
+            count--;
+            if(count<0)return false;
+        }
+    }
+    
+    if(count==0){
+        return true;
+    }
+    else{
+        return false;
+    }
+    
+    
+    // Q - check balacned paranthesis 2
+    
+    string str = "{}[()]"
+    
+       bool flag = false;
+    
+    for(auto& x : str){
+        if(x=='(' || x=='[' || x=='{')st.push(x);
+        else {
+            if(st.empty()){
+                flag = true;
+                 cout<<"NOT BALanced";
+                 break;
+                
+                 
+            }
+            if(x=='}' && st.top()=='{'){
+                st.pop();
+            }
+            else  if(x==']' && st.top()=='['){
+                st.pop();
+            }
+            else  if(x==')' && st.top()=='('){
+                st.pop();
+            }
+            else{
+                flag = true;
+                 cout<<"NOT BALanced";
+                 break;
+            }
+        }
+    }
+
+    
+    if(st.size()==0 && flag ==false){
+        cout<<"YES BALanced";
+    }
+    else{
+        cout<<"NOT BALanced";
+    }
+    
+    
+    
+    
+    
+    
+    
+
+    return 0;
+}
