@@ -1,0 +1,33 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    
+    int n = 5;
+    
+    //Insertion in array 
+    
+    // int arr[n]= {1,2,3,4,5};
+    
+    // int pos = 2;
+    // int ele = 10;
+    
+    // int brr[n+1];
+    
+    // for(int i  = 0;i< pos;i++){
+    //     brr[i]=arr[i];
+    // }
+    // brr[pos]=ele;
+    
+    // for(int i = pos;i<n ;i++){
+    //     brr[i+1]= arr[i];
+    // }
+    
+    // for(int i = 0;i<=n;i++){
+    //     cout<<brr[i]<<" ";
+    // }
+    
+
+    return 0;
+}
