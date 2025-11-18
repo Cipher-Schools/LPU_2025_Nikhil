@@ -1,0 +1,51 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    
+    vector<int> vec = {1,4,6,7,3};
+    
+    //Max Heap 
+    priority_queue<int>pq;
+    
+    //Min Heap 
+   // priority_queue<int,vector<int>,greater<int>>pq2;
+    
+    for(auto& x : vec){
+        pq.push(x);
+    }
+    
+    // cout<<pq.top()<<endl;
+    
+    // while(pq.size()>0){
+    //     cout<<pq.top()<<" ";
+    //     pq.pop();
+    // }
+    
+    // Q-> find the kth largest element
+    
+    //sorting approach 
+    // sort(vec.begin(),vec.end(),greater<int>());
+    // return vec[k-1];
+    
+    int k = 3;
+    
+    while(k>1){
+        pq.pop();
+        k--;
+    }
+    cout<<pq.top();
+    
+    
+    
+    // operations
+    // 1 push O(logn)
+    // 2 pop  O(logn)
+    // 3 top. O(1)
+    // 4 empty O(1)
+    // 5 size  O(1)
+    
+    
+    return 0;
+}
