@@ -1,0 +1,74 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main() {
+    
+    //Find the kth largest element
+    
+    // vector<int>vec = {2,3,4,2,1,4,6};
+    // priority_queue<int,vector<int>,greater<int>>pq;
+    // int k = 4;
+    
+    // for(auto& x : vec){
+    //     pq.push(x);
+    //     if(pq.size()>k)pq.pop();
+    // }
+    
+    // cout<<pq.top();
+    
+    //Find the kth smallest element
+    
+    
+
+    // priority_queue<int,vector<int>,greater<int>>pq;
+    // int k = 4;
+    
+    // // O(nlogn)
+    // for(auto&x : vec)pq.push(x);
+    
+    
+    // // O(klogn)
+    // while(k>1){
+    //     pq.pop();
+    // }
+    
+    // cout<<pq.top()>>" ";
+    
+//   vector<int>vec = {2,3,4,2,1,4,6};
+    // priority_queue<int>pq;
+    // int k = 3;
+    
+    // for(auto& x: vec){
+    //     pq.push(x);
+    //     if(pq.size()>k)pq.pop();
+    // }
+    // cout<<pq.top();
+    
+     vector<int>vec = {2,3,4,2,1,4,6};
+     priority_queue<int,vector<int>,greater<int>>pq;
+     
+     for(auto& x : vec){
+         pq.push(x);
+     }
+     int cost = 0;
+     while(pq.size()>1){
+         int a = pq.top();
+         pq.pop();
+         int b = pq.top();
+         pq.pop();
+         
+         int sum = a+b;
+         cost +=sum;
+         pq.push(sum);
+     }
+     
+     cout<<cost;
+     
+    
+    
+    
+    
+    return 0;
+}
