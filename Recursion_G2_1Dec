@@ -1,0 +1,103 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+// void print(int idx,int n){
+    
+//     if(idx>n)return ;
+//     cout<<idx<<" ";
+//     print(idx+1,n);
+// }
+
+void printRev2(int idx,int n){
+    
+    if(idx>n)return ;
+
+    printRev2(idx+1,n);
+    cout<<idx<<" ";
+}
+
+void printRev(int idx){
+    
+    if(idx<=0)return ;
+    cout<<idx<<" ";
+    printRev(idx-1);
+}
+
+void printArray(int arr[] ,int idx,int n){
+    
+    if(idx >= n)return ;
+    
+    cout<<arr[idx]<<" ";
+    printArray(arr,idx+1,n);
+    
+}
+
+void printArrayRev(int arr[] ,int idx,int n){
+    
+    if(idx >= n)return ;
+    
+   
+    printArray(arr,idx+1,n);
+     cout<<arr[idx]<<" ";
+    
+}
+
+int sum(int arr[],int idx,int n){
+    if(idx>=n)return 0;
+    
+    int value = 0;
+    value += arr[idx];
+    
+    return value +  sum(arr,idx+1,n);
+    
+    //return arr[idx] + sum(arr,idx+1,n);
+    
+}
+
+void sumofNumber(int arr[],int idx,int n ,int &sum){
+    if(idx>=n)return ;
+    
+   sum+=arr[idx];
+   sumofNumber(arr,idx+1,n,sum);
+    
+}
+
+
+int maxOfNumber(int arr[] , int idx ,int n){
+    if(idx==(n-1))return arr[idx];
+    
+    // return max(arr[idx],maxOfNumber(arr,idx+1 ,n) );
+    
+    int maxi = arr[idx];
+    
+    int nextMax = maxOfNumber(arr,idx+1,n);
+    
+    return max(maxi,nextMax);
+    
+}
+
+
+
+int main() {
+   int n = 5;
+   //print(1,n);
+//   printRev2(1,n);
+
+    int arr[]={1,2,3,4,5};
+    // printArray(arr,0,n);
+    
+    //cout<<sum(arr,0,n);
+    
+    // int sum = 0;
+    
+    // sumofNumber(arr,0,n,sum);
+    
+    // cout<<sum;
+    
+    int ans = maxOfNumber(arr,0,n);
+    cout<<ans;
+    
+
+    return 0;
+}
