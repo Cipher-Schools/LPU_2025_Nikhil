@@ -1,0 +1,49 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+
+void print(int idx,int n){
+    //1 . Base Case
+    if(idx>n)return ;
+    
+    //2 . Some operation
+    cout<<idx<<" ";
+    
+    //3 . Function call
+    print(idx+1,n);
+}
+
+void printRev2(int idx,int n){
+    //1 . Base Case
+    if(idx>n)return ;
+  
+    //3 . Function call
+    printRev2(idx+1,n);
+    
+     //2 . Some operation
+    cout<<idx<<" ";
+}
+
+void printRev(int n){
+    //1 . Base Case
+    if(n<=0)return ;
+    
+    //2 . Some operation
+    cout<<n<<" ";
+    
+    //3 . Function call
+    printRev(n-1);
+}
+
+int main() {
+    
+    int n = 5;
+    
+   // print(1,n);
+    cout<<endl;
+    printRev2(1,n);
+   // printRev(n);
+
+    return 0;
+}
