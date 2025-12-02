@@ -1,0 +1,149 @@
+#include <iostream>
+using namespace std;
+
+class complex {
+public:
+    int real, imag;
+
+    complex(int r = 0, int i = 0) {
+        real = r;
+        imag = i;
+    }
+
+    // + operator
+    complex operator + (const complex &c) {
+        complex temp;
+        // temp.real =0;
+        // temp.imag = 0;
+        temp.real = real + c.real;
+        temp.imag = imag + c.imag;
+        return temp;
+        
+        // return (real + c.real) + (imag + c.imag);
+    }
+
+    // - operator
+    complex operator - (const complex &c) {
+        complex temp;
+        temp.real = real - c.real;
+        temp.imag = imag - c.imag;
+        return temp;
+    }
+
+    // * operator
+    complex operator * (const complex &c) {
+        complex temp;
+        temp.real = (real * c.real) - (imag * c.imag);
+        temp.imag = (real * c.imag) + (imag * c.real);
+        return temp;
+    }
+
+    // == operator
+    bool operator == (const complex &c) {
+        // if(real == c.real && imag == c.imag)return true;
+        // return false;
+        return (real == c.real && imag == c.imag);
+    }
+
+    // != operator
+    bool operator != (const complex &c) {
+        return !(*this == c);
+    }
+
+    // += operator
+    //?
+    complex operator += (const complex &c) {
+        // complex temp;
+        // temp.real = real + c.real;
+        // temp.imag = imag + c.imag;
+
+        // real = temp.real;
+        // imag = temp.imag;
+        
+         real = real+ c.real;
+         imag = imag + c.imag;
+
+        return *this;
+        // return temp;
+    }
+
+  
+    // Prefix ++
+    // complex operator ++ () {
+    //     complex temp;
+    //     temp.real = real + 1;
+    //     temp.imag = imag + 1;
+
+    //     real++;   // update object
+    //     imag++;
+
+    //     return temp;
+    // }
+    
+    complex& operator++ () {
+    real++;
+    imag++;
+    return *this;     // return this object itself
+}
+
+    // Postfix ++
+    complex operator ++ (int) {
+        complex temp;
+        temp.real = real;
+        temp.imag = imag;
+
+        real++;
+        imag++;
+
+        return temp;
+    }
+
+
+    complex operator - () {
+        complex temp;
+        temp.real = -real;
+        temp.imag = -imag;
+        return temp;
+    }
+
+    friend ostream& operator<<(ostream &out, const complex &c) {
+        out << c.real << " + " << c.imag << "i";
+        return out;
+    }
+
+    friend istream& operator>>(istream &in, complex &c) {
+        in >> c.real >> c.imag;
+        return in;
+    }
+};
+
+int main() {
+    complex c1(2, 3);
+    complex c2(4, 5);
+
+    cout << "c1 = " << c1 << endl;
+    cout << "c2 = " << c2 << endl;
+
+    complex c3 = c1 + c2;
+    cout << "\nAddition: " << c3 << endl;
+
+    complex c4 = c1 - c2;
+    cout << "Subtraction: " << c4 << endl;
+
+    complex c5 = c1 * c2;
+    cout << "Multiplication: " << c5 << endl;
+
+    cout << "\nPrefix ++c1 = " << ++c1 << endl;
+    cout << "Postfix c1++ = " << c1++ << endl;
+    cout << "After postfix c1 = " << c1 << endl;
+
+    cout << "\nUnary minus: -" << c2 << " = " << -c2 << endl;
+
+    if (c1 == c2) cout << "\nc1 and c2 are equal\n";
+    else cout << "\nc1 and c2 are not equal\n";
+
+    c1 += c2;
+    cout << "\nAfter c1 += c2: " << c1 << endl;
+
+    return 0;
+}
