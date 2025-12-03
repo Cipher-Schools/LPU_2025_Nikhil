@@ -1,0 +1,86 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+
+// Linear Search
+bool find(int arr[],int n,int idx,int target){
+    
+    if(idx>=n)return false;
+    
+    if(target==arr[idx])return true;
+    
+    return  find(arr,n,idx+1,target);
+    
+}
+
+// int  find(int arr[],int n,int idx,int target){
+    
+//     if(idx>=n)return -1;
+    
+//     if(target==arr[idx])return idx;
+    
+//     find(arr,n,idx+1,target);
+    
+// }
+
+bool checkSorted(int arr[],int idx,int n){
+    
+    if(idx>=n)return true;
+    
+    if(arr[idx-1]>arr[idx])return false;
+    
+    return checkSorted(arr,idx+1,n);
+    
+}
+
+int sumOfDigits(int n){
+    // if(n<=0)return 0;
+    // return  n%10 + sumOfDigits(n/10);
+    
+    return (n<=0)?0: (n%10 +sumOfDigits(n/10));
+    
+}
+
+int firstOccurence(int arr[],int idx,int n,int target){
+    if(idx>=n)return -1;
+    if(arr[idx]==target)return idx;
+    
+    return firstOccurence(arr,idx+1,n,target);
+}
+
+int power(int a,int b){
+    
+    if(b==0)return 1;
+    
+    return a * power(a,b-1);
+    // return (b==0)?1 :(a * power(a,b-1));
+    
+}
+
+int fact(int n){
+    if(n==1)return 1;
+    
+    return n* fact(n-1);
+}
+
+int main() {
+   
+   int n = 5;
+   int arr[]= {1,2,3,4,5};
+//   int target  = 312;
+//   cout<<find(arr,n,0,target);
+
+  //cout<<checkSorted(arr,1,n);
+  
+//   cout<<sumOfDigits(333);
+
+if(b<0){
+    b = -1*b;
+    cout<<1 / power(2,4);
+}
+else cout<<power(2,4);  
+  
+
+    return 0;
+}
