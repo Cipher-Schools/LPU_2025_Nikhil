@@ -1,0 +1,53 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+
+void print(int arr[],int n,int idx){
+    
+    if(idx>=n)return ;
+    cout<<arr[idx]<<" ";
+    print(arr,n,idx+1);
+    
+}
+
+int sumOfArray(int arr[],int n,int idx){
+    if(idx>=n)return 0;
+    int sum = 0;
+    sum+=arr[idx];
+    
+   return sum +  sumOfArray(arr,n,idx+1);
+}
+
+void sumOfArray2(int arr[],int n,int idx,int &sum){
+    if(idx>=n)return ;
+    sum+=arr[idx];
+    sumOfArray2(arr,n,idx+1,sum);
+}
+
+void printArrayRev(int arr[],int n,int idx){
+    
+    if(idx>=n)return ;
+    printArrayRev(arr,n,idx+1);
+     cout<<arr[idx]<<" ";
+    
+}
+
+
+
+int main() {
+   
+   int n = 5;
+   int arr[]= {1,2,3,4,5};
+//   print(arr,n,0);
+//   cout<<endl;
+//   printArrayRev(arr,n,0);
+//   cout<<endl;
+//   int sum = sumOfArray(arr,n,0);
+//   cout<<sum;
+  int sum = 0;
+  sumOfArray2(arr,n,0,sum);
+  cout<<sum;
+
+    return 0;
+}
