@@ -1,0 +1,186 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+// Normal Way
+// class dog{
+//     public : 
+//      void sleep(){
+//          cout<<"I am Sleeping";
+//      }
+//      void eat(){
+//          cout<<"I am Eating";
+//      }
+     
+//      void bark(){
+//          cout<<"Bark.......";
+//      }
+// }
+
+// class cat{
+//     public :
+//     void sleep(){
+//         cout<<"I am Sleeping";
+//     }
+    
+//     void eat(){
+//         cout<<"I am Eating";
+//     }
+    
+//     void meow(){
+//         cout<<"Meow......";
+//     }
+// }
+
+// class bird{
+//     public :
+//     void sleep(){
+//         cout<<"I Am Sleeping";
+//     }
+//     void eat(){
+//         cout<<"I am Eating";
+//     }
+//     void fly(){
+//         cout<<"I am Flying....";
+//     }
+// }
+
+class animal{
+    public : 
+    void sleep(){
+        cout<<"I am Sleeping"<<endl;
+    }
+    void eat(){
+        cout<<"I am eating"<<endl;
+    }
+    
+    void breathe(){
+        cout<<"I am Breathing"<<endl;
+    }
+};
+
+class dog : public animal{
+    public : 
+    void sound(){
+        cout<<"woff......."<<endl;
+    }
+};
+
+class cat : public animal{
+    public :
+    void sound(){
+        cout<<"Meoww...."<<endl;
+    }
+};
+
+class bird : public animal{
+    public : 
+    void sound(){
+        cout<<"Chirp..."<<endl;
+    }
+};
+
+class grandFather{
+    public : 
+     void eat(){
+         cout<<"Eating ..... "<<endl;
+     }
+};
+
+class father : public grandFather{
+    public :
+        void teeth(){
+            cout<<" I have teeths..."<<endl;
+        }
+};
+
+class child : public father{
+    public :
+    void play(){
+        cout<<"I like playing .."<<endl;
+    }
+};
+
+
+class A{
+    public :
+    void showA(){
+        cout<<"I am A"<<endl;
+    }
+};
+
+class B{
+    public :
+    void showB(){
+        cout<<"I Am B"<<endl;
+    }
+};
+
+class C : public A, public B{
+    public:
+    void showC(){
+        cout<<"I Am C"<<endl;
+    }
+    
+};
+
+class manuel{
+    public : 
+    void manuelGears(){
+        cout<<" I Put gears in manuel mode"<<endl;
+    }
+};
+
+class automatic{
+    public : 
+    void automaticGears(){
+        cout<<" I Put gears in automatic mode"<<endl;
+    }
+};
+
+class semiAutomatic : public manuel,public automatic {
+    public : 
+    void semiAutomaticGears(){
+        cout<<" I Put gears in automatic mode as well as manuel mode";
+    }
+};
+
+int main() {
+    
+    dog d;
+    d.sleep(); // animal method
+    d.sound(); //own method 
+    
+    cat c;
+    c.eat(); //animal method
+    c.sound(); //own method
+    
+    bird b;
+    b.sleep(); //animal method
+    b.sound(); // own method
+    
+    grandFather g;
+    g.eat();
+    
+    father f;
+    f.eat(); //Inherited method
+    f.teeth(); //own method
+    
+    child ch;
+    ch.eat();  //Inherited method
+    ch.teeth();  //Inherited method
+    ch.play(); //own method
+    
+    C cc;
+    cc.showA();
+    cc.showB();
+    cc.showC();
+    
+    
+ semiAutomatic sm;
+ sm.manuelGears();
+ sm.automaticGears();
+ sm.semiAutomaticGears();
+
+    return 0;
+}
