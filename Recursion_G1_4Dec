@@ -1,0 +1,113 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+
+
+//Fibonacci Number 
+//Find nth number in the fib series
+int fib(int n,vector<int>& cache){
+    if(n==0 || n==1)return n;
+    
+    //if(cache[n]!=-1)return cache[n];
+    
+    return cache[n]=fib(n-1,cache)+fib(n-2,cache);
+}
+
+
+//????????
+void towerOfHanoi(int n ,char from ,char to ,char helper){
+    
+    if(n==0){
+        return ;
+    }
+    towerOfHanoi(n-1,from,helper ,to);
+    cout<<"Moved "<< n<<"th disk from "<< from <<"to "<<to <<endl;
+    towerOfHanoi(n-1,helper,to,from);
+    
+    
+}
+
+
+void merge(int arr[],int l,int m ,int r){
+    int n1 = m-l+1;
+    int n2 = r-m;
+    
+    int left[n1],right[n2];
+    
+    int k = 0;
+    
+    for(int a = 0;a<n1;a++){
+        left[a]= arr[a+l];
+        k++;
+    }
+    for(int a = 0 ;a<n2;a++){
+        right[a]= arr[a+m+1];
+        k++;
+        
+    }
+    
+    int i = 0 ,j = 0 ;
+    k = l;
+    
+    while(i<n1 && j <n2){
+        if(left[i]<right[j]){
+            arr[k]=left[i];
+            k++;
+            i++;
+        }
+        else{
+            arr[k]=right[j];
+            k++;
+            j++;
+        }
+    }
+    
+    while(i<n1){
+        arr[k++]=left[i];
+        i++;
+    }
+    
+    while(j<n2){
+        arr[k++]=right[j];
+        j++;
+    }
+    
+}
+
+
+void mergeSort(int arr[],int l ,int r){
+    if(l==r){
+        return;
+    }
+    int m = (l+r)/2;
+    
+    mergeSort(arr,l,m);
+    mergeSort(arr,m+1,r);
+    
+    merge(arr,l,m,r);
+    
+}
+
+
+int main() {
+    
+    //int n = 50;
+   // vector<int>cache(n+1,-1);
+   // cout<<fib(n,cache);
+//   int n = 3;
+//   towerOfHanoi(n,'A','B','C');
+
+    int n = 5;
+    
+    int arr[]={3,4,1,5,2};
+    mergeSort(arr,0,n-1);
+    
+    
+   // for(auto& x : arr)cout<<x<<" ";
+    
+    
+    
+  
+    return 0;
+}
