@@ -1,0 +1,158 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+
+using namespace std;
+
+// 1.  public
+// 2 . private
+// 3 . protected
+
+class base{
+    public:
+    int x;
+    protected:
+    int y;
+    private :
+    int z;
+    
+    // void setter(int val){
+    //     z=30;
+    // }
+    
+    // int getter(){
+    //     return z;
+    // }
+};
+
+class publicChild : public base{
+    
+    public :
+    void show(){
+        x = 10; // No Issues
+        y = 20; // No Issues
+       // z= 30;  // Issue will Occur
+    }
+    
+    
+};
+
+class protectedChild: protected base{
+    public : 
+    void show(){
+        x= 10 ; // No Issues but this x will become protected
+        y = 20 ; // No Issues , y Will remain Protective
+        //z = 30 ; // Issues will occure
+    }
+};
+
+class privateChild : private base{
+    public : 
+    void show (){
+        x = 10 ;// No issues but x will become private
+        y = 20 ; // No issues but y will private
+       // z = 30; //  Issues will occur
+    }
+    
+};
+
+class parentClass{
+    
+    public:
+    parentClass(){
+        cout<<"parentClass COnstructor called"<<endl;
+    }
+    
+    
+    ~parentClass(){
+        cout<<"parentClass Destructor called"<<endl;
+    }
+    
+};
+
+
+class parentClassB{
+    
+    public:
+    parentClassB(){
+        cout<<"parentClassB COnstructor called"<<endl;
+    }
+    
+    
+    ~parentClassB(){
+        cout<<"parentClassB Destructor called"<<endl;
+    }
+    
+};
+
+class multilevelChild : public parentClassB , parentClass{
+     public:
+    
+    multilevelChild(){
+        cout<<"multilevelChild Constructor called"<<endl;
+    }
+    
+    
+    ~multilevelChild(){
+        cout<<"multilevelChild Destructor called"<<endl;
+    }
+};
+
+class childClass : public parentClass{
+    
+    public:
+    
+    childClass(){
+        cout<<"childClass Constructor called"<<endl;
+    }
+    
+    
+    ~childClass(){
+        cout<<"childClass Destructor called"<<endl;
+    }
+    
+    
+};
+
+class classChild2 : public childClass{
+    public :
+    classChild2(){
+          cout<<"childClass2 constructor called"<<endl;
+    }
+    ~classChild2(){
+          cout<<"childClass2 Destructor called"<<endl;
+    }
+};
+
+
+//Method overriding
+
+class animal{
+    public :
+    void speak(){
+        cout<<"Hello there !!! "<<endl;
+    }
+};
+
+class dog : public animal{
+    public :
+    void speak(){
+        cout<<"Bark !!!! "<<endl;
+    }
+};
+
+
+int main() {
+    
+    // multilevelChild ch;
+    
+    
+    // dog d;
+    // d.speak(); // Over riding will happen to speak function
+    
+    animal a ;
+    a.speak(); // No Method overriding
+   
+  \
+    return 0;
+}
+
