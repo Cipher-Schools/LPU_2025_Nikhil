@@ -1,0 +1,62 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+//There is not ambiguity in multiple inheritence due to method overriding 
+
+//Ambiguity in mutiple inheritence
+class parentClassA{
+    public:
+    void show(){
+        cout<<"Hi there !!!!! "<<endl;
+    }
+};
+
+class parentClassB{
+    public : 
+    void show(){
+        cout<<"Helloo Good morning !!! "<<endl;
+    }
+};
+
+class child : public parentClassA , public parentClassB{
+    
+};
+
+
+
+//Diamond  Problem
+class superParent{
+    public :
+    void show(){
+        cout<<"I am super Parent !!!"<<endl;
+    }
+};
+//We inherit virtually from parent class
+class parentA :virtual public superParent{
+    
+};
+
+//We inherit virtually from parent class
+class parentB :virtual public superParent{
+    
+};
+
+class childD : public parentA,public parentB{
+    
+};
+
+
+
+int main() {
+    
+    // child ch;
+    // ch.parentClassA::show();
+    // ch.parentClassB::show();
+    
+    childD d;
+    d.show();
+  
+
+    return 0;
+}
