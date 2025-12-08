@@ -1,0 +1,202 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Node{
+    int data;
+    Node* left;
+    Node* right;
+    
+    Node(int val){
+        data = val;
+        left = nullptr;
+        right = nullptr;
+    }
+};
+
+void preorder(Node* node){
+    if(!node)return ;
+    cout<<node->data<<" ";
+    preorder(node->left);
+    preorder(node->right);
+}
+
+
+void sumOfTree(Node* node,int &sum){
+    if(!node)return ;
+    sum+= node->data;
+    sumOfTree(node->left,sum);
+    sumOfTree(node->right,sum);
+}
+
+// int sumOfTree(Node* node){
+//     if(!node)return 0;
+//     int sum = 0;
+//     sum+=node->data;
+
+    // int leftSum = sumOfTree(node->left);
+    // int rightSum  = sumOfTree(node->right);
+    
+//     return sum  + leftSum + rightSum ;
+// }
+
+int sumOftree(Node* node){
+    return (!node)?0: ( node->data +sumOftree(node->left) +sumOftree(node->right) );
+}
+
+
+void inorder(Node* node){
+    if(!node)return ;
+
+    inorder(node->left);
+    cout<<node->data<<" ";
+    inorder(node->right);
+}
+
+void postorder(Node* node){
+    if(!node)return ;
+
+    postorder(node->left);
+    postorder(node->right);
+    cout<<node->data<<" ";
+}
+
+void levelOrder(Node*  root){
+    queue<Node*>q;
+    q.push(root);
+    
+    while(!q.empty()){
+        Node* node = q.front();
+        q.pop();
+        
+        cout<<node->data<<" ";
+        
+        if(node->left!=nullptr)q.push(node->left);
+        if(node->right!=nullptr)q.push(node->right);
+    }
+    
+}
+
+int countBylevelOrder(Node*  root){
+    queue<Node*>q;
+    q.push(root);
+    int count = 0;
+    
+    while(!q.empty()){
+        Node* node = q.front();
+        q.pop();
+        count++;
+        
+        //cout<<node->data<<" ";
+        
+        if(node->left!=nullptr)q.push(node->left);
+        if(node->right!=nullptr)q.push(node->right);
+    }
+    
+    return count;
+    
+}
+
+
+int countOfAlNodes(Node* node){
+    if(!node)return 0;
+    int leftCount = countOfAlNodes(node->left);
+    int rightcount = countOfAlNodes(node->right);
+    
+    return  1+ leftCount + rightcount ;
+    
+    // return (!node)?0 : (1+countOfAlNodes(node->left)+countOfAlNodes(node->right));
+}
+
+int countLeafNodes(Node* node){
+    if(!node)return 0;
+    
+    if(node->left==nullptr && node->right ==nullptr)return 1;
+    
+     int leftCount = countOfAlNodes(node->left);
+     int rightcount = countOfAlNodes(node->right);
+    
+    return  leftCount + rightcount ;
+}
+
+int countNonLeafNodes(Node* node){
+    if(!node)return 0;
+    if(node->left!=nullptr || node->right!=nullptr)return 1;
+     int leftCount = countOfAlNodes(node->left);
+     int rightcount = countOfAlNodes(node->right);
+    
+    return  leftCount + rightcount ;
+}
+
+int height(Node* root){
+    if(!root)return 0;
+    
+    int lc = height(root->left);
+    int rc = height(root->right);
+    
+    return 1 +max(lc,rc);
+}
+
+void printLeftViewByLevelOrder(Node* root){
+    queue<Node*>q;
+    q.push(root);
+    
+    while(!q.empty()){
+        int size = q.size();
+        
+        for(int i = 1;i<=size;i++){
+            Node* node = q.front();
+            q.pop();
+            if(i==1)cout<<node->data<<" ";
+            if(node->left!=nullptr)q.push(node->left);
+            if(node->right!=nullptr)q.push(node->right);
+        }
+        
+    }
+      while(!q.empty()){
+        Node* node = q.front();
+        q.pop();
+        cout<<node->data<<" ";
+        if(node->left!=nullptr)q.push(node->left);
+        if(node->right!=nullptr)q.push(node->right);
+    }
+    
+    
+    
+    
+    
+    
+}
+
+int main() {
+    
+    Node* root = new Node(1);
+    Node* leftNode = new Node(2);
+    Node* rightNode = new Node(3);
+    
+    root->left = leftNode ;
+    root->right = rightNode;
+    
+    Node* left1 = new Node(4);
+    leftNode->left = left1;
+    Node* right1 = new Node(4);
+    leftNode->right = right1;
+    
+    // preorder(root);
+    // cout<<endl;
+    // inorder(root);
+    // cout<<endl;
+    // postorder(root);
+    // cout<<endl;
+    
+    // int sum = 0;
+    // sumOfTree(root,sum);
+    
+    // int count = countOfAlNodes(root);
+    // cout<<count;
+    
+    cout<<height(root);
+    
+
+    return 0;
+}
