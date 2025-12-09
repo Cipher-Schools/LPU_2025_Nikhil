@@ -1,0 +1,96 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+
+class student{
+    public :
+    string name ;
+    
+    student(string nameOfStudent){
+        name = nameOfStudent;
+        cout<<name<<endl;
+    }
+    
+};
+
+class college{
+  
+  public : 
+    student* s;
+    
+    
+    college(student* st){
+        s= st;
+        cout<<"College is here"<<endl;
+    }
+    
+    void print(){
+        cout<<"Hello i am : "<<s->name;
+    }
+    
+};
+
+class engine{
+    public :
+        engine(){
+            cout<<"Engine Created"<<endl;
+        }
+        
+        ~engine(){
+            cout<<"Engine Destroyed"<<endl;
+        }
+};₹
+class car{
+    public :
+    engine *e;
+    car(){
+        e  = new engine();
+        cout<<"Car Created"<<endl;
+    }
+    ~car(){
+        delete e ;
+        cout<<"Car Destroyed"<<endl;
+        
+    }
+};
+
+
+
+int a = 3;
+// int* a = 3;
+
+int arr[4];
+// int arr = new int[4];
+
+
+int main() {
+//   student s("Ravi");
+//   college c(&s);
+//   c.print();
+
+    car c;
+   
+   //College Student
+   //Book Library
+   // teacher uni
+   //Book Page
+   //Human Water
+   //Phone And sim
+   
+   
+   
+   //Composition
+   //Fish And Water
+   //Car And Engine
+   // vehicle tyre
+   //
+   
+   int a = 4;
+   int b = 5;
+   
+   int *a = b;
+   
+
+    return 0;
+}
