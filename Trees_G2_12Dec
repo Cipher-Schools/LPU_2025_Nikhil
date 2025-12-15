@@ -1,0 +1,113 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Node{
+    int data;
+    Node* left;
+    Node* right;
+    
+    Node(int val){
+        data = val;
+        left = nullptr;
+        right = nullptr;
+    }
+};
+
+
+void minmax(Node* node , int & mini , int &maxi){
+    if(!node)return;
+    
+    mini = min (mini , node->data);
+    
+    maxi = max (maxi , node->data);
+    
+    minmax(node->left,mini,maxi);
+    minmax(node->right,mini,maxi);
+}
+
+int diameter(Node* node,int &dia){
+    if(!node)return 0;
+    int lh = height (node->left,dia);
+    int rh = height (node->right,dia);
+    
+    dia = max(dia , lh+rh);
+    
+    return 1 + max(lh,rh);
+}
+
+int height(Node* node){
+    if(!node)return 0;
+    int lh = height (node->left);
+    int rh = height (node->right);
+
+    
+    return 1 + max(lh,rh);
+}
+
+bool checkIfBalanced(Node* node){
+    if(!node)return true;
+    
+    int leftHeight = height(node->left);
+    
+    int righttHeight = height(node->right);
+    
+    if(abs(leftHeight-righttHeight)>1)return false;
+    
+    bool leftCall = checkIfBalanced(node->left);
+    bool rightCall = checkIfBalanced(node->right);
+    
+    return leftCall &&  rightCall;
+    
+}
+
+
+
+int height2(Node* node,bool &isbalanced){
+    if(!node)return 0;
+    int lh = height (node->left);
+    int rh = height (node->right);
+
+      if(abs(lh-rh)>1){
+          isbalanced=false;
+          return 0;
+      }
+    
+    return 1 + max(lh,rh);
+}
+
+//TC - ?????
+void towerOfHanoi(int n ,char from ,char to ,char helper){
+    
+    if(n==0){
+        return ;
+    }
+    towerOfHanoi(n-1,from,helper ,to);
+    cout<<"Moved "<< n<<"th disk from "<< from <<"to "<<to <<endl;
+    towerOfHanoi(n-1,helper,to,from);
+}
+
+
+int main() {
+    
+    Node* root = new Node(1);
+    Node* leftNode = new Node(2);
+    Node* rightNode = new Node(3);
+    
+    root->left = leftNode ;
+    root->right = rightNode;
+    
+    Node* left1 = new Node(4);
+    leftNode->left = left1;
+    Node* right1 = new Node(5);
+    leftNode->right = right1;
+    
+
+    
+    
+  
+
+    
+
+    return 0;
+}
