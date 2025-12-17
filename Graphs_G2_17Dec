@@ -1,0 +1,36 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    
+    int v = 8;
+   
+   vector<pair<int,int>>edges ={{1,2},{1,5},{1,4},{2,8},{2,7},{2,3}};
+   
+ 
+   
+//   1st way adj Matrix
+   vector<vector<int>>adj(v+1 ,vector<int>(v+1,0));
+   
+   for(auto& x : edges){
+       int u = x.first;
+       int v = x.second;
+       
+       adj[u][v] =1;
+       adj[v][u] =1;
+   }
+   
+//   2nd way adj list
+   vector<vector<int>>adj2(v+1);
+   
+   for(auto& x: edges){
+       int u = x.first;
+       int v = x.second;
+       
+       adj2[u].push_back(v);
+       adj2[v].push_back(u);
+   }
+
+    return 0;
+}
