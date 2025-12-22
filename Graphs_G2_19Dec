@@ -1,0 +1,70 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+void DFS(int root, vector<vector<int>>&adjList,vector<bool>&visited){
+    visited[root]=true;
+    cout<<root<<" ";
+    
+    for(auto& neighbour : adjList[root]){
+        
+        if(visited[neighbour]==false){
+         DFS(neighbour,adjList,visited);    
+        }
+        
+    }
+}
+
+void BFS(int root,vector<vector<int>>&adjList,vector<bool>&visited){
+    queue<int>q;
+    q.push(root);
+    while(!q.empty()){
+        int node  = q.front();
+        q.pop();
+        visited[node]=true;
+        cout<<node<<" ";
+        
+        for(auto& x: adjList[node]){
+            if(visited[x]==false){
+                q.push(x);
+            }
+        }q
+    }
+}
+
+int main() {
+    
+    int v = 8;
+   
+   vector<pair<int,int>>edges ={{1,2},{1,5},{1,4},{2,8},{2,7},{2,3}};
+   
+ 
+   
+//   1st way adj Matrix
+//   vector<vector<int>>adj(v+1 ,vector<int>(v+1,0));
+   
+//   for(auto& x : edges){
+//       int u = x.first;
+//       int v = x.second;
+       
+//       adj[u][v] =1;
+//       adj[v][u] =1;
+//   }
+   
+//   2nd way adj list
+   vector<vector<int>>adjList(v+1);
+   
+   for(auto& x: edges){
+       int u = x.first;
+       int v = x.second;
+       
+       adjList[u].push_back(v);
+       adjList[v].push_back(u);
+   }
+   
+   vector<bool>visited(v+1);
+   
+   DFS(1,adjList,visited);
+
+    return 0;
+}
