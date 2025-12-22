@@ -1,0 +1,124 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+void dijkstra(vector<vector<pair<int,int>>>&adjList,int src,  vector<int>&dis){
+    
+    priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>pq;
+    
+    pq.push({0,src});
+    dis[src] = 0;
+    
+    while(!pq.empty()){
+        int node = pq.top().second;
+        int d    = pq.top().first;
+        
+        pq.pop();
+        
+        for(auto& ngbr : adjList[node]){
+            int cost = ngbr.second;
+            int ngbrNode = ngbr.first;
+            
+            if(cost + d < dis[ngbrNode]){
+                dis[ngbrNode] = cost+d;
+                pq.push({cost+d ,ngbrNode});
+            }
+        }
+    }
+    
+}
+
+void bellMan((vector<vector<int>>&edges,int src,  vector<int>&dis,int V){
+    
+    dis[0] =0;
+    
+    //Relax All the edges v-1 times as we are finding shortest path and if there are v nodes , shortest path will always have v-1 edges
+    for(int i = 0;i<V-1;i++){
+        
+        for(auto& x: edges){
+            int u = x[0];
+            int v = x[1];
+            int w = x[2];
+            
+            if(dis[u]!=INT_MAX && dis[u]  + w < dis[v]){
+                dis[v] = dis[u]+w;
+            }
+        }
+        
+    }
+    
+    //Relax One more time , if the value still decreases it means that there is negative cycle
+     for(auto& x: edges){
+            int u = x[0];
+            int v = x[1];
+            int w = x[2];
+            
+            if(dis[u]!=INT_MAX && dis[u]  + w < dis[v]){
+                cout<<"Negative Cycle Exists"<<endl;
+                break;
+            }
+        }
+    
+}
+
+void floydWarshall(vector<vector<int>> &dist) {
+    int V = dist.size();
+
+    // Add all vertices one by one to
+    // the set of intermediate vertices.
+    for (int k = 0; k < V; k++) {
+
+        // Pick all vertices as source one by one
+        for (int i = 0; i < V; i++) {
+
+            // Pick all vertices as destination
+            // for the above picked source
+            for (int j = 0; j < V; j++) {
+
+                // shortest path from
+                // i to j 
+                if(dist[i][k] != 1e8 && dist[k][j]!= 1e8)
+                dist[i][j] = min(dist[i][j],dist[i][k] + dist[k][j]);
+            }
+        }
+    }
+}
+
+int main() {
+    
+    int V = 2;
+    
+//   vector<pair<int,pair<int,int>>>edges ={{0,{1,8}},{0,{2,2}},{1,{2,4}}};
+   
+   vector<vector<int>>edges = {{1,2,2},{2,3,3},{2,4,1},{4,3,-5}};
+   
+   vector<vector<pair<int,int>>>adjList(V+1);
+   
+//   for(auto& x : edges){
+//       int u = x.first;
+//       int v = x.second.first;
+//       int w = x.second.second;
+       
+//       adjList[u].push_back({v,w});
+//       adjList[v].push_back({u,w});
+//   }
+
+    // for(auto& x : edges){
+    //     int u = x[0];
+    //     int v = x[1];
+    //     int w = x[2];
+        
+    //      adjList[u].push_back({v,w});
+    //      adjList[v].push_back({u,w});
+    // }
+    
+  
+   
+  vector<int>dis(V+1,INT_MAX);
+  int src = 0;
+   
+//   dijkstra(adjList,src,dis);
+bellMan(edges,src,dis,V);
+   
+    return 0;
+}
