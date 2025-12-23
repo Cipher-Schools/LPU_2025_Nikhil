@@ -1,0 +1,79 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+void insertion(vector<int>&heap,int val){
+    heap.push_back(val);
+    int i = heap.size()-1;
+    
+    while(i>0){
+        int parent = (i-1)/2;
+        if(heap[parent]<heap[i]){
+            swap(heap[parent],heap[i]);
+            i = parent;
+        }
+        else break;
+    }
+}
+
+void deletion(vector<int>&heap){
+    int n = heap.size()-1;
+    heap[0] = heap[n];
+    heap.pop_back();
+    
+    int i = 0;
+    
+    while(true){
+        // if(n==0){
+        //     break;
+        // }
+        
+        int leftChild = 2*i+1;
+        int rightChild = 2*i+2;
+        
+        int maxi = i;
+        
+        if(leftChild < n &&heap[leftChild]>heap[maxi]){
+            maxi = leftChild;
+        }
+        if( rightChild < n &&heap[rightChild]>heap[maxi]){
+            maxi = rightChild;
+        }
+        
+        if(maxi==i){
+            break;
+        }
+        else{
+            swap(heap[maxi],heap[i]);
+            i = maxi ;
+        }
+        
+    }
+    
+}
+
+int main() {
+    
+    vector<int>heap = {35,25,30,15,10,5,20};
+    
+      for(auto& x : heap){
+        cout<<x<<" ";
+    }
+    cout<<endl;
+    
+    int val = 27;
+    insertion(heap,val);
+    
+    for(auto& x : heap){
+        cout<<x<<" ";
+    }
+      cout<<endl;
+    deletion(heap);
+    
+      for(auto& x : heap){
+        cout<<x<<" ";
+    }
+    
+    
+    return 0;
+}
