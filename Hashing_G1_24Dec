@@ -1,0 +1,52 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    
+    // vector<int>vec = {1,2,3,1,1,1,2,4,4,5,5,5,5,5};
+    // int max_ele = *max_element(begin(vec),end(vec));
+    
+    // vector<int>freqArray(max_ele + 1);
+    
+    // for(int i = 0 ;i <vec.size();i++){
+    //     freqArray[vec[i]]++;
+    // }
+    // int target = 2;
+    // cout<<freqArray[target];
+    
+    // vector<char>vec = {'a','a','b','z'};
+    
+    // vector<int>freqArray(26);
+    
+    // for(int i = 0 ;i <vec.size();i++){
+    //   // freqArray[vec[i]-'a']++;
+    //      freqArray[vec[i]-97]++;
+    // }
+    // char target = 'a';
+    // cout<<freqArray[target-'a'];
+    
+    
+    // unordered_map<int,int>freqArray;
+    
+    //  // for(int i = 0 ;i <vec.size();i++){
+    // //     freqArray[vec[i]]++;
+    // // }
+    //   // vector<int>vec = {1,2,3,1,1,1,2,4,4,5,5,5,5,5};
+    // for(auto& x : vec){
+    //     freqArray[x]++;
+    // }
+    // vector<char>vec = {'a','A','%','@','a','7','1'};
+    // unordered_map<char,int>mp;
+    
+    // for(auto& x: charVec){
+    //     mp[x]++;
+    // }
+    
+    
+    
+    
+    
+    
+    return 0;
+}
