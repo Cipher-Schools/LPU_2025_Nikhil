@@ -1,0 +1,33 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+ 
+    // try{
+    //     throw "some Error";
+    // }
+    // catch(const char* msg){
+    //     cout<<msg;
+    // }
+    
+    int a = 10, b = 10;
+    
+    try{
+        if(b!=0){
+           int c = a/b;
+           cout<<"The Value is : "<<c<<endl;
+        }
+        else{
+            throw "b Cannot be Zero";
+        }
+    }
+    catch(const char* message){
+        cout<<"The Error is : "<<message<<endl;
+    }
+    
+    cout<<"hello";
+   
+
+    return 0;
+}
